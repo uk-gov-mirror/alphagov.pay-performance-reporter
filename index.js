@@ -14,8 +14,8 @@ if (!PERFORMANCE_PLATFORM_API_KEY) {
 }
 
 const CONNECTOR_URL        = process.env.CONNECTOR_URL
-const CONNECTOR_ENDPOINT   = 'v1/api/reports/performance-report'
-const CONNECTOR_REPORT_URL = `${CONNECTOR_URL}/${CONNECTOR_ENDPOINT}`
+const CONNECTOR_ENDPOINT   = 'v1/api/reports/daily-performance-report'
+const CONNECTOR_REPORT_URL = `${CONNECTOR_URL}/${CONNECTOR_ENDPOINT}?date=${new Date().toISOString()}`
 
 console.info(`CONNECTOR_REPORT_URL => ${CONNECTOR_REPORT_URL}`)
 console.info('Making request to connector')
@@ -77,6 +77,9 @@ request.get(CONNECTOR_REPORT_URL, (err, response, body) => {
     'Content-Type': 'application/json'
   }
 
+  console.info(payload, headers)
+  process.exit(0);
+
   request({
     uri:    PERFORMANCE_PLATFORM_URL,
     method: 'POST',
@@ -85,7 +88,4 @@ request.get(CONNECTOR_REPORT_URL, (err, response, body) => {
     console.info('cb')
     console.info(err, response, body)
   })
-
-  console.info(payload, headers)
-  //process.exit(0);
 })
