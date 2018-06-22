@@ -15,8 +15,8 @@ if (!CONNECTOR_URL) {
 }
 
 const lastYearOfDates = Array
-  .from(new Array(1000).keys())
-  .filter(daysAgo => daysAgo >= 30 && daysAgo <= 60)
+  .from(new Array(7).keys())
+  .filter(daysAgo => daysAgo > 0 && daysAgo <= 2)
   .map(daysAgo => {
     let today = new Date()
     today.setDate(today.getDate() - daysAgo)
