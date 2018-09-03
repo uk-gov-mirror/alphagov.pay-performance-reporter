@@ -1,13 +1,11 @@
 const F = require('./functions')
 
-const PERFORMANCE_PLATFORM_API_KEY = process.env.PERFORMANCE_PLATFORM_API_KEY
+const { PERFORMANCE_PLATFORM_API_KEY, CONNECTOR_URL } = process.env
 
 if (!PERFORMANCE_PLATFORM_API_KEY) {
   console.error('PERFORMANCE_PLATFORM_API_KEY not found')
   process.exit(1)
 }
-
-const CONNECTOR_URL = process.env.CONNECTOR_URL
 
 if (!CONNECTOR_URL) {
   console.error('CONNECTOR_URL not found')
