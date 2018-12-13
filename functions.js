@@ -58,6 +58,8 @@ module.exports.retrieveDailyPerformanceStatsForDate = async function(connectorUr
     request.get(reportUrl, (err, response, body) => {
       if (err) {
         reject(err)
+      } else if (response && response.statusCode !== 200) {
+        reject(`Got an unsuccessful response. Status code: ${response.statusCode}`)
       } else {
         resolve(JSON.parse(body))
       }
@@ -92,6 +94,8 @@ module.exports.sendStatsToPerformancePlatform = function (date, report, apiKey) 
     }, (err, response, body) => {
       if (err) {
         reject(err)
+      } else if (response && response.statusCode !== 200) {
+        reject(`Got an unsuccessful response. Status code: ${response.statusCode}, message: ${response.body.messages}`)
       } else {
         resolve([response, body])
       }
