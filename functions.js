@@ -85,6 +85,8 @@ module.exports.sendStatsToPerformancePlatform = function (date, report, apiKey) 
     report.average_amount
   )
 
+  console.log(payload)
+
   return new Promise((resolve, reject) => {
     request({
       uri: url,
