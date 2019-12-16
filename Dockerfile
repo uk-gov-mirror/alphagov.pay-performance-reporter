@@ -1,7 +1,5 @@
-FROM alpine@sha256:769fddc7cc2f0a1c35abb2f91432e8beecf83916c421420e6a6da9f8975464b6
+FROM node@sha256:b556d8910b851c27c5c8922eeb55d94fe6dbaf878d24bf0c9a8c32ba21cd091a
 
-RUN ["apk", "--no-cache", "upgrade"]
-RUN ["apk", "add", "--no-cache", "nodejs", "npm"]
 
 WORKDIR /app
 ADD . /app
