@@ -16,3 +16,11 @@ We also have the ability to run it to backfill data for specific days.
   > If there is missing data that needs backfilling you can provide
   the number of days you need to backfill, so if it was just yesterday
   do `DAYS_TO_BACKFILL=1` and if it was last week do `DAYS_TO_BACKFILL=7`
+
+  
+## Licence
+[MIT License](LICENCE)
+
+## Responsible Disclosure
+GOV.UK Pay aims to stay secure for everyone. If you are a security researcher and have discovered a security vulnerability in this code, we appreciate your help in disclosing it to us in a responsible manner. We will give appropriate credit to those reporting confirmed issues. Please e-mail gds-team-pay-security@digital.cabinet-office.gov.uk with details of any issue you find, we aim to reply quickly.
+
