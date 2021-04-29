@@ -3,14 +3,11 @@
 // const request = require('request')
 const { expect } = require('chai')
 const sinon = require('sinon')
-const proxyquire = require('proxyquire')
 const requestLogger = {}
 const events = require('events')
 const util = require('util')
 
-const wrapper = proxyquire('../../../app/services/clients/base.client/wrapper', {
-  '../../../utils/request-logger': requestLogger
-})
+const wrapper = require('../../../../app/services/clients/base.client/wrapper')
 
 describe('wrapper: request scenarios', () => {
   describe('when the request returns successfully with statusCode 200', () => {
@@ -34,10 +31,6 @@ describe('wrapper: request scenarios', () => {
     // Wire the EventEmitter into it, so we can emit the event specified above to any watchers
     util.inherits(RequestStub, events.EventEmitter)
     before(done => {
-      requestLogger.logRequestStart = sinon.spy()
-      requestLogger.logRequestEnd = sinon.spy()
-      requestLogger.logRequestFailure = sinon.spy()
-      requestLogger.logRequestError = sinon.spy()
       cb = sinon.spy()
       returnee = wrapper(new RequestStub(), 'get')('http://example.com/', cb)
       returnee
@@ -133,10 +126,6 @@ describe('wrapper: request scenarios', () => {
     // Wire the EventEmitter into it, so we can emit the event specified above to any watchers
     util.inherits(RequestStub, events.EventEmitter)
     before(done => {
-      requestLogger.logRequestStart = sinon.spy()
-      requestLogger.logRequestEnd = sinon.spy()
-      requestLogger.logRequestFailure = sinon.spy()
-      requestLogger.logRequestError = sinon.spy()
       cb = sinon.spy()
       returnee = wrapper(new RequestStub(), 'get')('http://example.com/', cb)
       returnee
@@ -158,12 +147,6 @@ describe('wrapper: request scenarios', () => {
       expect(cb.lastCall.args[0]).to.equal(rejected)
       expect(cb.lastCall.args[1]).to.equal(undefined)
       expect(cb.lastCall.args[2]).to.equal(undefined)
-    })
-    it('should log the request start, end and error but not a request failure', () => {
-      expect(requestLogger.logRequestStart.called).to.equal(true)
-      expect(requestLogger.logRequestEnd.called).to.equal(true)
-      expect(requestLogger.logRequestError.called).to.equal(true)
-      expect(requestLogger.logRequestFailure.called).to.equal(false)
     })
   })
 })
