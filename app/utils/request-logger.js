@@ -7,7 +7,7 @@ module.exports = {
 
   logRequestEnd: (context, response) => {
     let duration = new Date() - context.startTime
-    console.log(`${context.method} to ${context.url} ended - elapsed time: ${duration} ms`, context, response)
+    console.log(`${context.method} to ${context.url} ended - elapsed time: ${duration} ms`, context)
   },
 
   logRequestFailure: (context, response) => {

@@ -1,6 +1,7 @@
 'use strict'
 
 const baseClient = require('./base.client/base.client')
+const Service = require('../../models/Service.class')
 
 const defaultOptions = {
   baseUrl: process.env.ADMINUSERS_URL,
@@ -8,16 +9,18 @@ const defaultOptions = {
   service: 'adminusers'
 }
 
-const extractData = (response) => response.data
+const responseBodyToServicesArray = body => body.map(service => new Service(service))
 
-const getServiceStatistics = function getServiceStatistics () {
+const getServiceStatistics = async function getServiceStatistics () {
+  let data
   const path = '/v1/api/services/list'
   const configuration = Object.assign({
     url: path,
-    description: 'Service statistics'
+    description: 'Service statistics',
+    transform: responseBodyToServicesArray
   }, defaultOptions)
+
   return baseClient.get(configuration)
-    .then(response => extractData(response))
 }
 
 module.exports = {

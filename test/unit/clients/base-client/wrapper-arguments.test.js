@@ -3,7 +3,7 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
 
-const wrapper = require('../../../app/services/clients/base.client/wrapper')
+const wrapper = require('../../../../app/services/clients/base.client/wrapper')
 
 describe('wrapper: arguments handling', () => {
   describe('wrapper arguments', () => {

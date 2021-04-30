@@ -12,7 +12,7 @@ describe('baseClient', () => {
       }
     }
   }
-  const baseClient = proxyquire('../../../app/services/clients/base.client/base.client',
+  const baseClient = proxyquire('../../../../app/services/clients/base.client/base.client',
     {
       'requestretry': requestRetryStub
     })
