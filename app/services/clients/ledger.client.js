@@ -1,6 +1,6 @@
 'use strict'
 
-const baseClient = require('./base-client/base.client')
+const baseClient = require('./base.client/base.client')
 
 const defaultOptions = {
   baseUrl: process.env.LEDGER_URL,
@@ -8,23 +8,21 @@ const defaultOptions = {
   service: 'ledger'
 }
 
-const extractData = (response) => response.data
-
-const transactionsSummary = function transactionsSummary (fromDate, toDate, options = {}) {
+const getTransactionsSummary = function getTransactionsSummary (fromDate, toDate) {
   const path = '/v1/report/transactions-summary'
   const configuration = Object.assign({
     url: path,
     qs: {
+      override_account_id_restriction: true,
       from_date: fromDate,
       to_date: toDate
     },
     description: 'Transactions summary statistics'
-  }, defaultOptions, options)
+  }, defaultOptions)
 
-  return baseClient.get(configuration)
-    .then(response => extractData(response))
+  return  baseClient.get(configuration)
 }
 
 module.exports = {
-  transactionsSummary
+  getTransactionsSummary: getTransactionsSummary
 }
