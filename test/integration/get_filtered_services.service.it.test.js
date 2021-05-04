@@ -21,6 +21,6 @@ describe('get service data', () => {
     adminusersMock.get('/v1/api/services/list')
       .reply(200, servicesData)
       const services = await filterService.fetchAndFilterServices()
-      expect(services.length).to.equal(4)
+      expect(services.length).to.equal(5)
   })
 })
