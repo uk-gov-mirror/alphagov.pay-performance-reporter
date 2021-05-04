@@ -60,5 +60,14 @@ module.exports = {
         archived: false
       }
     ]
+  },
+  performanceData: () => {
+    return {
+      payments: {
+        count: 49493,
+        gross_amount: 262310
+      },
+      net_income: 260210
+    }
   }
 }

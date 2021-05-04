@@ -53,6 +53,7 @@
     "express": "4.17.x",
     "lodash": "4.17.x",
     "minimist": "1.2.x",
+    "moment": "^2.29.1",
     "request": "^2.88.2",
     "requestretry": "^5.0.0",
     "url-join": "^4.0.1",
