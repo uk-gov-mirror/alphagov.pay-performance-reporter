@@ -7,7 +7,7 @@ async function fetchAndFilterServices() {
 
   return servicesData
     .filter(service => service.currentGoLiveStage === 'LIVE' && service.internal === false && service.archived === false)
-    .sort((serviceA, serviceB) => serviceA.serviceName.localeCompare(serviceB.serviceName))
+    .sort((serviceA, serviceB) => serviceA.merchantDetails.name.localeCompare(serviceB.merchantDetails.name))
 }
 
 module.exports = {

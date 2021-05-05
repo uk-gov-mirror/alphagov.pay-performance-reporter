@@ -3,10 +3,11 @@
 class Service {
   constructor (serviceData) {
     this.name = serviceData.name
-    this.serviceName = serviceData.service_name
     this.currentGoLiveStage = serviceData.current_go_live_stage
     this.internal = serviceData.internal
     this.archived = serviceData.archived
+    this.sector = serviceData.sector
+    this.merchantDetails = serviceData.merchant_details
   }
 }
 

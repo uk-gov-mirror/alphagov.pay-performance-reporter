@@ -22,12 +22,12 @@ describe('get performance data', () => {
     const url = '/v1/report/transactions-summary?override_account_id_restriction=true&from_date=' + fromDate + '&to_date=' + toDate
 
     ledgerMock.get(url)
-      .reply(200, fixtures.performanceData())
+      .reply(200, fixtures.statisticsData())
 
     const data = await performanceDataService.getPerformanceReport(fromDate, toDate)
 
-    expect(data.payments.count).to.equal(49493)
-    expect(data.payments.gross_amount).to.equal(262310)
-    expect(data.net_income).to.equal(260210)
+    expect(data.payments.count).to.equal(4949300)
+    expect(data.payments.gross_amount).to.equal(2623170000)
+    expect(data.net_income).to.equal(26021000000)
   })
 })
