@@ -97,11 +97,9 @@ module.exports = {
   },
   statisticsData: () => {
     return {
-      payments: {
-        count: 4949300,
-        gross_amount: 2623170000
-      },
-      net_income: 26021000000
+      total_volume: 4949300,
+      total_amount: 2623170000,
+      average_amount: 5100
     }
   },
   performanceData: () => {
