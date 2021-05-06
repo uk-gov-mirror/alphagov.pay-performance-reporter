@@ -18,8 +18,8 @@ describe('create performance json', () => {
     done()
   })
 
-  const fromDate = moment.utc().subtract(7, 'days').startOf('day').format()
-  const toDate = moment().utc().startOf('day').format()
+  const fromDate =moment('20160901', 'YYYYMMDD').format('yyyy-MM-DD')
+  const toDate = moment().utc().subtract(1, 'days').format('yyyy-MM-DD')
   const servicesData = fixtures.services()
   const statisticsData = fixtures.statisticsData()
 
