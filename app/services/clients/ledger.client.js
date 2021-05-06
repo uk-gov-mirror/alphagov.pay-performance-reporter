@@ -8,12 +8,11 @@ const defaultOptions = {
   service: 'ledger'
 }
 
-const getTransactionsSummary = function getTransactionsSummary (fromDate, toDate) {
-  const path = '/v1/report/transactions-summary'
+const getPerformanceReport = function getPerformanceReport (fromDate, toDate) {
+  const path = '/v1/report/performance-report'
   const configuration = Object.assign({
     url: path,
     qs: {
-      override_account_id_restriction: true,
       from_date: fromDate,
       to_date: toDate
     },
@@ -24,5 +23,5 @@ const getTransactionsSummary = function getTransactionsSummary (fromDate, toDate
 }
 
 module.exports = {
-  getTransactionsSummary: getTransactionsSummary
+  getPerformanceReport: getPerformanceReport
 }

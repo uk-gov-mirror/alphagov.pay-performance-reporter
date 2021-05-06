@@ -24,7 +24,7 @@ describe('create performance json', () => {
   const statisticsData = fixtures.statisticsData()
 
   it('should create performance json', async function () {
-    const statisticsUrl = '/v1/report/transactions-summary?override_account_id_restriction=true&from_date=' + fromDate + '&to_date=' + toDate
+    const statisticsUrl = '/v1/report/performance-report?from_date=' + fromDate + '&to_date=' + toDate
 
     adminusersMock.get('/v1/api/services/list')
       .reply(200, servicesData)
