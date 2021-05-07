@@ -6,9 +6,11 @@ const lodash = require('lodash')
 const filteredServices = require('./get_filtered_services.service')
 const performanceDataService = require('./get_performance_report.service')
 
+const DATE_FORMAT = 'yyyy-MM-DD'
+
 async function createPerformanceJson() {
-  const fromDate = moment.utc().subtract(7, 'days').startOf('day').format()
-  const toDate = moment().utc().startOf('day').format()
+  const fromDate = moment('20160901', 'YYYYMMDD').format(DATE_FORMAT)
+  const toDate = moment().utc().subtract(1, 'days').format(DATE_FORMAT)
 
   const services = await filteredServices.fetchAndFilterServices()
   const performanceReport = await performanceDataService.getPerformanceReport(fromDate, toDate)

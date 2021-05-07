@@ -17,8 +17,8 @@ describe('get performance data', () => {
   })
 
   it('should return performance data from ledger', async function () {
-    const fromDate =  '2021-04-27T00:00:00Z'
-    const toDate = '2021-05-04T00:00:00Z'
+    const fromDate =  '2021-04-27'
+    const toDate = '2021-05-04'
     const url = '/v1/report/performance-report?from_date=' + fromDate + '&to_date=' + toDate
 
     ledgerMock.get(url)
