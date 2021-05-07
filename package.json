@@ -63,7 +63,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "chai": "^4.3.4",
-    "cheerio": "^1.0.0-rc.6",
+    "cheerio": "^1.0.0-rc.9",
     "chokidar-cli": "latest",
     "dotenv": "^8.3.0",
     "envfile": "^5.2.0",
