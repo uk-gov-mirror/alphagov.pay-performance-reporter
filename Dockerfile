@@ -1,7 +1,6 @@
-FROM node@sha256:b556d8910b851c27c5c8922eeb55d94fe6dbaf878d24bf0c9a8c32ba21cd091a
-
+FROM node:12.22.1-alpine3.12@sha256:29c7b0f61218ec57a2ac36778a3954e3f8b32f43294aaf960d2fbb3452229335
 
 WORKDIR /app
 ADD . /app
 RUN ["npm", "install"]
-CMD ["node" "index.js"]
+CMD ["node", "index.js"]
