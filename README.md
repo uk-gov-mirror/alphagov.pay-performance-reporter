@@ -1,22 +1,21 @@
 # Pay performance reporter
 
-We have an AWS ECS task that runs daily to send stats to the [GOV.UK Performance platform](https://www.gov.uk/performance/govuk-pay).
-
-We also have the ability to run it to backfill data for specific days.
-
+We have an AWS ECS task that runs daily to upload stats to an s3 bucket where it is read from by the performance report page
 
 ## Required environment variables
 
-- `PERFORMANCE_PLATFORM_API_KEY` - GOV.UK Performance platform [API key](https://performance-platform.readthedocs.io/)
-- `CONNECTOR_URL` - URL of connector you want to retrieve data from
+- `ADMINUSERS_URL` - URL of adminusers you want to retrieve data from
+- `LEDGER_URL` - URL of ledger you want to retrieve data from
+- `AWS_S3_PERFORMANCE_DATA_BUCKET_NAME` - name of the bucket where you want to store the performance.json file
 
-## Optional environment variable
+AWS credentials are picked up from the environment
 
-- `DAYS_TO_BACKFILL` 
-  > If there is missing data that needs backfilling you can provide
-  the number of days you need to backfill, so if it was just yesterday
-  do `DAYS_TO_BACKFILL=1` and if it was last week do `DAYS_TO_BACKFILL=7`
+## Running it locally
 
+- make sure that you have a `.env` file in the root directory (you can rename `.env.example`)
+- make sure that `ADMINUSERS_URL` and `LEDGER_URL` point to a running instance
+- make sure that `AWS_S3_PERFORMANCE_DATA_BUCKET_NAME` is a valid bucket name
+- `aws-vault exec test -- npm run start:dev`
   
 ## Licence
 [MIT License](LICENCE)
