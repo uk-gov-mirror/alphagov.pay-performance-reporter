@@ -2,9 +2,10 @@
 
 const baseClient = require('./base.client/base.client')
 const Service = require('../../models/Service.class')
+const { ADMINUSERS_URL } = require('../../config/services')
 
 const defaultOptions = {
-  baseUrl: process.env.ADMINUSERS_URL,
+  baseUrl: ADMINUSERS_URL,
   json: true,
   service: 'adminusers'
 }

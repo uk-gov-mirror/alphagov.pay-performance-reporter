@@ -1,9 +1,10 @@
 'use strict'
 
 const baseClient = require('./base.client/base.client')
+const { LEDGER_URL } = require('../../config/services')
 
 const defaultOptions = {
-  baseUrl: process.env.LEDGER_URL,
+  baseUrl: LEDGER_URL,
   json: true,
   service: 'ledger'
 }
