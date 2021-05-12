@@ -15,7 +15,8 @@ const getPerformanceReport = function getPerformanceReport (fromDate, toDate) {
     url: path,
     qs: {
       from_date: fromDate,
-      to_date: toDate
+      to_date: toDate,
+      state: 'SUCCESS'
     },
     description: 'Transactions summary statistics'
   }, defaultOptions)

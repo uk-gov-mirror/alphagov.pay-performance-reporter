@@ -8,6 +8,19 @@ const performanceDataService = require('./get_performance_report.service')
 
 const DATE_FORMAT = 'yyyy-MM-DD'
 
+function convertToUnits(value) {
+  let stringOfAmount
+
+  if (value >= 1000000 && value < 1000000000) {
+    stringOfAmount = (value / 1.0e6).toFixed(1) + " million";
+  } else if (value >= 10000000) {
+    stringOfAmount = (value / 1.0e9).toFixed(1) + " billion";
+  } else
+    stringOfAmount = value.toString()
+
+  return stringOfAmount;
+}
+
 async function createPerformanceJson() {
   const fromDate = moment('20160901', 'YYYYMMDD').format(DATE_FORMAT)
   const toDate = moment().utc().subtract(1, 'days').format(DATE_FORMAT)
@@ -29,8 +42,8 @@ async function createPerformanceJson() {
 
   return  {
     dateUpdated: moment().format('D MMMM YYYY'),
-    numberOfPayments: (performanceReport.total_volume / 1000000).toFixed(1) + ' million',
-    totalPaymentAmount: (performanceReport.total_amount / 1000000).toFixed(1) + ' million',
+    numberOfPayments: convertToUnits(performanceReport.total_volume),
+    totalPaymentAmount: convertToUnits(performanceReport.total_amount / 100),
     numberOfServices: services.length,
     numberOfOrganisations: Object.keys(countByOrganisation).length,
     serviceCountBySector: countBySector,

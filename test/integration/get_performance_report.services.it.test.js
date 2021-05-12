@@ -19,7 +19,7 @@ describe('get performance data', () => {
   it('should return performance data from ledger', async function () {
     const fromDate =  '2021-04-27'
     const toDate = '2021-05-04'
-    const url = '/v1/report/performance-report?from_date=' + fromDate + '&to_date=' + toDate
+    const url = '/v1/report/performance-report?from_date=' + fromDate + '&to_date=' + toDate + '&state=SUCCESS'
 
     ledgerMock.get(url)
       .reply(200, fixtures.statisticsData())
@@ -27,7 +27,7 @@ describe('get performance data', () => {
     const data = await performanceDataService.getPerformanceReport(fromDate, toDate)
 
     expect(data.total_volume).to.equal(4949300)
-    expect(data.total_amount).to.equal(2623170000)
+    expect(data.total_amount).to.equal(262317000000)
     expect(data.average_amount).to.equal(5100)
   })
 })
