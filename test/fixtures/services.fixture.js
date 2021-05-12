@@ -98,7 +98,7 @@ module.exports = {
   statisticsData: () => {
     return {
       total_volume: 4949300,
-      total_amount: 2623170000,
+      total_amount: 262317000000,
       average_amount: 5100
     }
   },
@@ -106,7 +106,7 @@ module.exports = {
     return  {
       dateUpdated: moment().format('D MMMM YYYY'),
       numberOfPayments: "4.9 million",
-      totalPaymentAmount:"2623.2 million",
+      totalPaymentAmount:"2.6 billion",
       numberOfServices:5,
       numberOfOrganisations:4,
       serviceCountBySector: {
