@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "dotenv": "^9.0.2",
+    "dotenv": "^10.0.0",
     "envfile": "^5.2.0",
     "eslint": "7.27.x",
     "husky": "^6.0.0",
