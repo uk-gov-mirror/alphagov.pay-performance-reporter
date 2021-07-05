@@ -60,7 +60,7 @@
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "envfile": "^5.2.0",
-    "eslint": "7.29.x",
+    "eslint": "7.30.x",
     "husky": "^7.0.0",
     "lint-staged": "^11.0.0",
     "mocha": "7.2.x",
