@@ -18,3 +18,8 @@ updates:
   labels:
   - dependencies
   - govuk-pay
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    time: "03:00"
