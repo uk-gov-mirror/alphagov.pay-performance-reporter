@@ -62,7 +62,7 @@
     "envfile": "^5.2.0",
     "eslint": "7.32.x",
     "husky": "^7.0.2",
-    "lint-staged": "^11.2.0",
+    "lint-staged": "^11.2.3",
     "mocha": "7.2.x",
     "nock": "13.1.x",
     "proxyquire": "~2.1.0",
