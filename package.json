@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@govuk-pay/pay-js-commons": "3.3.8",
-    "aws-sdk": "2.1088.0",
+    "aws-sdk": "2.1089.0",
     "express": "4.17.x",
     "joi": "^17.6.0",
     "lodash": "4.17.x",
