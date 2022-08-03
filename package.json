@@ -28,11 +28,6 @@
     "lint": "./node_modules/.bin/standard --fix",
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha '!(node_modules)/**/*.test'.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "npm run lint",
@@ -61,7 +56,6 @@
     "dotenv": "^16.0.0",
     "envfile": "^5.2.0",
     "eslint": "7.32.x",
-    "husky": "^7.0.4",
     "lint-staged": "^12.3.5",
     "mocha": "7.2.x",
     "nock": "13.2.x",
