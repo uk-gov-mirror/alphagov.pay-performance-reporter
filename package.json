@@ -39,7 +39,7 @@
     "url": "git+https://github.com/alphagov/pay-performance-reporter.git"
   },
   "dependencies": {
-    "@govuk-pay/pay-js-commons": "3.6.2",
+    "@govuk-pay/pay-js-commons": "3.7.0",
     "aws-sdk": "2.1198.0",
     "express": "4.18.x",
     "joi": "^17.6.0",
