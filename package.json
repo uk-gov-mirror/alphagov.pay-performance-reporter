@@ -42,7 +42,7 @@
     "@govuk-pay/pay-js-commons": "3.8.0",
     "aws-sdk": "2.1221.0",
     "express": "4.18.x",
-    "joi": "^17.6.0",
+    "joi": "^17.6.1",
     "lodash": "4.17.x",
     "minimist": "1.2.x",
     "moment": "^2.29.1",
