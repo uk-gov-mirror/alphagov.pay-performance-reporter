@@ -1,6 +1,8 @@
 # Pay performance reporter
 
-We have an AWS ECS task that runs daily to upload stats to an s3 bucket where it is read from by the performance report page
+A NodeJS app that queries Ledger and Adminusers to gather performance stats.
+
+Previously this was run daily as an AWS ECS task, to upload stats to an s3 bucket.
 
 ## Required environment variables
 
