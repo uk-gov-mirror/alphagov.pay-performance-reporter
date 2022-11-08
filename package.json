@@ -52,7 +52,7 @@
     "winston": "3.8.2"
   },
   "devDependencies": {
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "dotenv": "^16.0.3",
     "envfile": "^5.2.0",
     "eslint": "8.27.x",
