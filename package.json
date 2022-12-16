@@ -60,7 +60,7 @@
     "mocha": "7.2.x",
     "nock": "13.2.x",
     "proxyquire": "~2.1.0",
-    "sinon": "15.0.0",
+    "sinon": "15.0.1",
     "standard": "^17.0.0"
   }
 }
