@@ -58,7 +58,7 @@
     "eslint": "8.31.x",
     "lint-staged": "^13.1.0",
     "mocha": "7.2.x",
-    "nock": "13.2.x",
+    "nock": "13.3.x",
     "proxyquire": "~2.1.0",
     "sinon": "15.0.1",
     "standard": "^17.0.0"
