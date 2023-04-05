@@ -26,7 +26,7 @@
     "start": "node index.js",
     "start:dev": "node -r dotenv/config index.js",
     "lint": "./node_modules/.bin/standard --fix",
-    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha '!(node_modules)/**/*.test'.js"
+    "test": "NODE_ENV=test mocha '!(node_modules)/**/*.test'.js"
   },
   "lint-staged": {
     "*.js": [
@@ -57,7 +57,7 @@
     "envfile": "^5.2.0",
     "eslint": "8.36.x",
     "lint-staged": "^13.2.0",
-    "mocha": "7.2.x",
+    "mocha": "^10.2.0",
     "nock": "13.3.x",
     "proxyquire": "~2.1.0",
     "sinon": "15.0.3",
