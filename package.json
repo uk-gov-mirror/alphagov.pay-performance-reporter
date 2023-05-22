@@ -55,7 +55,7 @@
     "chai": "^4.3.7",
     "dotenv": "^16.0.3",
     "envfile": "^5.2.0",
-    "eslint": "8.40.x",
+    "eslint": "8.41.x",
     "lint-staged": "^13.2.2",
     "mocha": "^10.2.0",
     "nock": "13.3.x",
