@@ -1,5 +1,7 @@
 # Pay performance reporter
 
+> As of April 2024 this repository is no longer actively maintained by the GOV.UK Pay team.
+
 A NodeJS app that queries Ledger and Adminusers to gather performance stats.
 
 Previously this was run daily as an AWS ECS task, to upload stats to an s3 bucket.
